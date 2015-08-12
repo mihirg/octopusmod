@@ -1,0 +1,15 @@
+octopus:
+  environments:
+    - development
+  development:
+    replica:
+      host: localhost
+      adapter: mysql2
+      database: test2
+      username: root
+      password: mysql
+      encoding: utf8
+      reconnect: false
+      pool: 5
+      port: 3306
+      collation: utf8_general_ci

@@ -1,0 +1,7 @@
+octopus:
+  environments:
+    - development
+  development:
+    replica:
+      host: localhost
+      adapter: nulldb
