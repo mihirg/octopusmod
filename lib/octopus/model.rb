@@ -126,12 +126,16 @@ module Octopus
         else
           proxy = self.instance_variable_get(:@connection_proxy)
           if proxy == nil
+            proxy = self.initialize_internal
+            self.instance_variable_set(:@connection_proxy, proxy)
+=begin
             super_class = self.superclass
             while (proxy == nil)
               proxy = super_class.instance_variable_get(:@connection_proxy)
             end
             self.instance_variable_set(:@connection_proxy, proxy)
             Rails.logger.info("Setting proxy for #{self.name}")
+=end
           end
           proxy
         end

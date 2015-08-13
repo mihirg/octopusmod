@@ -5,5 +5,8 @@ class WelcomeController < ApplicationController
     Octopus.using(:replica) do
       User.create({name: "mihir",location: "replica" })
     end
+
+    u = User.using(:replica).last
+    u
   end
 end
